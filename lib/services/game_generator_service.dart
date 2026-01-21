@@ -1,7 +1,8 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 class GameGeneratorService {
-  static const String _apiKey = String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
+  static const String _apiKey =
+      String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
   final GenerativeModel model = GenerativeModel(
     model: 'gemini-1.5-flash',
     apiKey: _apiKey,
