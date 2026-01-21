@@ -1,9 +1,11 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 class GameGeneratorService {
-  final model = GenerativeModel(
-      model: 'gemini-1.5-flash',
-      apiKey: 'AIzaSyBTf5ncM2NHhMqT-y0n4FN-wRIup_VOK2Y'); // Replace with your free Gemini API key
+  static const String _apiKey = String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
+  final GenerativeModel model = GenerativeModel(
+    model: 'gemini-1.5-flash',
+    apiKey: _apiKey,
+  );
 
   Future<Map<String, dynamic>> generateGame(
       String subject, String mode, String level) async {
